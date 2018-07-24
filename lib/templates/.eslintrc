@@ -1,0 +1,81 @@
+extends:
+  - airbnb
+  - plugin:flowtype/recommended
+
+parser: babel-eslint
+
+plugins:
+  - flowtype
+  - import
+  - jsdoc
+
+# Allow the following global variables
+env:
+  browser: false # browser global variables
+  node: true # Node.js global variables and Node.js scoping.
+  mocha: true # adds all of the Mocha testing global variables.
+  es6: true # enable all ECMAScript 6 features except for modules
+
+# Stop 'no-undef' errors for these.
+globals:
+  $: true
+  App: true
+  Application: true
+  expect: true
+  gon: true
+  I18n: true
+  jest: true
+  Routes: true
+  window: true
+
+rules:
+  class-methods-use-this: off
+  global-require: off
+  import/extensions: [2, "never"]
+  import/no-dynamic-require: off
+  import/no-extraneous-dependencies: off
+  import/no-named-as-default: off
+  import/no-unresolved: [2, { ignore: ['shuttlerock'] }]
+  import/prefer-default-export: off
+  key-spacing: [error, { align: "value" }]
+  max-len: [error, 150]
+  no-duplicate-imports: off # import/no-duplicates replaces this one.
+  no-multi-spaces: [error, { exceptions: { AssignmentExpression: true, BinaryExpression: true, ImportDeclaration: true, VariableDeclarator: true } }]
+  no-unused-vars: ["error", { "argsIgnorePattern": "^__" }]
+  react/no-danger: off
+  react/no-array-index-key: off
+  react/prefer-stateless-function: off
+  jsdoc/check-param-names: 1
+  jsdoc/check-tag-names: 1
+  jsdoc/check-types: 1
+  jsdoc/newline-after-description: 1
+  jsdoc/require-description-complete-sentence: 1
+  jsdoc/require-hyphen-before-param-description: 1
+  jsdoc/require-param: 1
+  jsdoc/require-param-description: 1
+  jsdoc/require-param-type: 1
+  jsdoc/require-returns-description: 1
+  jsdoc/require-returns-type: 1
+  # See https://github.com/ReactTraining/react-router/issues/5598
+  jsx-a11y/anchor-is-valid: [ "error", { "components": [ "Link" ], "specialLink": [ "hrefLeft", "hrefRight", "to" ], "aspects": [ "noHref", "invalidHref", "preferButton" ] }]
+  jsx-a11y/label-has-for: [2, { "components": [ "Label" ], "required": { "some": [ "nesting", "id" ] }, "allowChildren": false }]
+  jsx-a11y/no-autofocus: off
+  # TODO: remove this rule after we have gotten rid of all alert()s.
+  no-alert: off
+  // Validate JSX has key prop when in array or iterator
+  react/jsx-key: 0
+  react/jsx-no-duplicate-props: [0, {
+    "ignoreCase": false
+  }]
+  // Enforce component methods order
+  react/sort-comp: [2, {
+    "order": [
+      "static-methods",
+      "constructor",
+      "lifecycle",
+      "render",
+      "/^render.+$/",
+      "/^handle.+$/",
+      "everything-else"
+    ]
+  }]
