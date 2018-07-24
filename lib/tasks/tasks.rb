@@ -1,6 +1,5 @@
 require 'fileutils'
 
-
 namespace :shuttlerock_shared_config do
   task update: %i[update_codeclimate update_eslint update_rubocop update_stylelintrc] do
   end

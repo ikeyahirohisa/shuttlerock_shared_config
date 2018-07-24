@@ -21,11 +21,11 @@ Or install it yourself as:
 
 ## Usage
 
-rake shuttlerock_shared_config:update_codeclimate  # Update .codeclimate.yml
-rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
-rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
-rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
-rake shuttlerock_shared_config:update              # Update all
+    $ rake shuttlerock_shared_config:update_codeclimate  # Update .codeclimate.yml
+    $ rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
+    $ rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
+    $ rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
+    $ rake shuttlerock_shared_config:update              # Update all
 
 ## Development
 
