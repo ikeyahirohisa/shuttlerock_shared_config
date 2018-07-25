@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'rake'
 require 'fileutils'
 
 namespace :shuttlerock_shared_config do
