@@ -21,12 +21,16 @@ globals:
   $: true
   App: true
   Application: true
+  document: true
   expect: true
   gon: true
   I18n: true
   jest: true
   Routes: true
   window: true
+  fetch: true
+  Event: true
+  CustomEvent: true
 
 rules:
   class-methods-use-this: off
@@ -37,14 +41,30 @@ rules:
   import/no-named-as-default: off
   import/no-unresolved: [2, { ignore: ['shuttlerock'] }]
   import/prefer-default-export: off
-  key-spacing: [error, { align: "value" }]
+  key-spacing: [
+    "error",
+    {
+      "multiLine": {
+        "beforeColon": false,
+        "afterColon": true
+      },
+      "align": {
+        "beforeColon": false,
+        "afterColon": true,
+        "on": "value"
+      }
+    }
+  ]
   max-len: [error, 150]
   no-duplicate-imports: off # import/no-duplicates replaces this one.
   no-multi-spaces: [error, { exceptions: { AssignmentExpression: true, BinaryExpression: true, ImportDeclaration: true, VariableDeclarator: true } }]
   no-unused-vars: ["error", { "argsIgnorePattern": "^__" }]
+  lines-between-class-members: off
+  react/destructuring-assignment: off
   react/no-danger: off
   react/no-array-index-key: off
   react/prefer-stateless-function: off
+  react/require-default-props: off
   jsdoc/check-param-names: 1
   jsdoc/check-tag-names: 1
   jsdoc/check-types: 1
@@ -57,8 +77,8 @@ rules:
   jsdoc/require-returns-description: 1
   jsdoc/require-returns-type: 1
   # See https://github.com/ReactTraining/react-router/issues/5598
-  jsx-a11y/anchor-is-valid: [ "error", { "components": [ "Link" ], "specialLink": [ "hrefLeft", "hrefRight", "to" ], "aspects": [ "noHref", "invalidHref", "preferButton" ] }]
   jsx-a11y/label-has-for: [2, { "components": [ "Label" ], "required": { "some": [ "nesting", "id" ] }, "allowChildren": false }]
+  jsx-a11y/anchor-is-valid: off
   jsx-a11y/no-autofocus: off
   # TODO: remove this rule after we have gotten rid of all alert()s.
   no-alert: off
@@ -79,3 +99,5 @@ rules:
       "everything-else"
     ]
   }]
+  # function-paren-newline: ["error", "multiline"]
+  no-console: ["error", { allow: ["warn", "error"] }]
