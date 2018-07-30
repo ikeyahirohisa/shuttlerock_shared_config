@@ -65,7 +65,7 @@ Metrics/MethodLength:
   CountComments: false
   Max:           25
 
-Naming/UncommunicativeMethodArgName:
+Naming/UncommunicativeMethodParamName:
   MinNameLength: 2
 
 Naming/UncommunicativeBlockParamName:
