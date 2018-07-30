@@ -65,6 +65,12 @@ Metrics/MethodLength:
   CountComments: false
   Max:           25
 
+Naming/UncommunicativeMethodArgName:
+  MinNameLength: 2
+
+Naming/UncommunicativeBlockParamName:
+  MinNameLength: 2
+
 SpaceInsideParens:
   Enabled: false
 
