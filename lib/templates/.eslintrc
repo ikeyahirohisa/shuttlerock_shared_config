@@ -1,103 +1,160 @@
-extends:
-  - airbnb
-  - plugin:flowtype/recommended
-
-parser: babel-eslint
-
-plugins:
-  - flowtype
-  - import
-  - jsdoc
-
-# Allow the following global variables
-env:
-  browser: false # browser global variables
-  node: true # Node.js global variables and Node.js scoping.
-  mocha: true # adds all of the Mocha testing global variables.
-  es6: true # enable all ECMAScript 6 features except for modules
-
-# Stop 'no-undef' errors for these.
-globals:
-  $: true
-  App: true
-  Application: true
-  document: true
-  expect: true
-  gon: true
-  I18n: true
-  jest: true
-  Routes: true
-  window: true
-  fetch: true
-  Event: true
-  CustomEvent: true
-
-rules:
-  class-methods-use-this: off
-  global-require: off
-  import/extensions: [2, "never"]
-  import/no-dynamic-require: off
-  import/no-extraneous-dependencies: off
-  import/no-named-as-default: off
-  import/no-unresolved: [2, { ignore: ['shuttlerock'] }]
-  import/prefer-default-export: off
-  key-spacing: [
-    "error",
-    {
-      "multiLine": {
-        "beforeColon": false,
-        "afterColon": true
-      },
-      "align": {
-        "beforeColon": false,
-        "afterColon": true,
-        "on": "value"
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "import",
+    "jsdoc"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "$": true,
+    "App": true,
+    "Application": true,
+    "CustomEvent": true,
+    "document": true,
+    "Event": true,
+    "expect": true,
+    "fetch": true,
+    "gon": true,
+    "I18n": true,
+    "jest": true,
+    "Routes": true,
+    "window": true,
+  },
+  "rules": {
+    "class-methods-use-this": 0,
+    "global-require": 0,
+    "import/extensions": [
+      2,
+      "never"
+    ],
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "shuttlerock"
+        ]
       }
-    }
-  ]
-  max-len: [error, 150]
-  no-duplicate-imports: off # import/no-duplicates replaces this one.
-  no-multi-spaces: [error, { exceptions: { AssignmentExpression: true, BinaryExpression: true, ImportDeclaration: true, VariableDeclarator: true } }]
-  no-unused-vars: ["error", { "argsIgnorePattern": "^__" }]
-  lines-between-class-members: off
-  react/destructuring-assignment: off
-  react/no-danger: off
-  react/no-array-index-key: off
-  react/prefer-stateless-function: off
-  react/require-default-props: off
-  jsdoc/check-param-names: 1
-  jsdoc/check-tag-names: 1
-  jsdoc/check-types: 1
-  jsdoc/newline-after-description: 1
-  jsdoc/require-description-complete-sentence: 1
-  jsdoc/require-hyphen-before-param-description: 1
-  jsdoc/require-param: 1
-  jsdoc/require-param-description: 1
-  jsdoc/require-param-type: 1
-  jsdoc/require-returns-description: 1
-  jsdoc/require-returns-type: 1
-  # See https://github.com/ReactTraining/react-router/issues/5598
-  jsx-a11y/label-has-for: [2, { "components": [ "Label" ], "required": { "some": [ "nesting", "id" ] }, "allowChildren": false }]
-  jsx-a11y/anchor-is-valid: off
-  jsx-a11y/no-autofocus: off
-  # TODO: remove this rule after we have gotten rid of all alert()s.
-  no-alert: off
-  // Validate JSX has key prop when in array or iterator
-  react/jsx-key: 0
-  react/jsx-no-duplicate-props: [0, {
-    "ignoreCase": false
-  }]
-  // Enforce component methods order
-  react/sort-comp: [2, {
-    "order": [
-      "static-methods",
-      "constructor",
-      "lifecycle",
-      "render",
-      "/^render.+$/",
-      "/^handle.+$/",
-      "everything-else"
+    ],
+    "import/prefer-default-export": 0,
+    "key-spacing": [
+      "error",
+      {
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+          "beforeColon": false,
+          "afterColon": true,
+          "on": "value"
+        }
+      }
+    ],
+    "max-len": [
+      "error",
+      150
+    ],
+    "no-duplicate-imports": 0,
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "AssignmentExpression": true,
+          "BinaryExpression": true,
+          "ImportDeclaration": true,
+          "VariableDeclarator": true
+        }
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^__"
+      }
+    ],
+    "lines-between-class-members": 0,
+    "react/destructuring-assignment": 0,
+    "react/no-danger": 0,
+    "react/no-array-index-key": 0,
+    "react/prefer-stateless-function": 0,
+    "react/require-default-props": 0,
+    "jsdoc/check-param-names": 1,
+    "jsdoc/check-tag-names": 1,
+    "jsdoc/check-types": 1,
+    "jsdoc/newline-after-description": 1,
+    "jsdoc/require-description-complete-sentence": 1,
+    "jsdoc/require-hyphen-before-param-description": 1,
+    "jsdoc/require-param": 1,
+    "jsdoc/require-param-description": 1,
+    "jsdoc/require-param-type": 1,
+    "jsdoc/require-returns-description": 1,
+    "jsdoc/require-returns-type": 1,
+    //  See https://github.com/ReactTraining/react-router/issues/5598
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": [
+          "Label"
+        ],
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        },
+        "allowChildren": false
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/no-autofocus": 0,
+    // TODO: remove this rule after we have gotten rid of all alert()s.
+    "no-alert": 0,
+    // Validate JSX has key prop when in array or iterator
+    "react/jsx-key": 0,
+    "react/jsx-no-duplicate-props": [
+      0,
+      {
+        "ignoreCase": false
+      }
+    ],
+    // Enforce component methods order
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-methods",
+          "constructor",
+          "lifecycle",
+          "render",
+          "/^render.+$/",
+          "/^handle.+$/",
+          "everything-else"
+        ]
+      }
+    ],
+    // # function-paren-newline: ["error", "multiline"]
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
     ]
-  }]
-  # function-paren-newline: ["error", "multiline"]
-  no-console: ["error", { allow: ["warn", "error"] }]
+  }
+}
