@@ -77,6 +77,9 @@ SpaceInsideParens:
 SpaceBeforeFirstArg:
   Enabled: false
 
+Style/AccessModifierDeclarations:
+  Enabled: false
+
 Style/BlockDelimiters:
   Enabled: false
 
