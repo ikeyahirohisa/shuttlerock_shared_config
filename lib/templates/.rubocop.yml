@@ -1,6 +1,6 @@
 # See example at https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - 'app/admin/**/*.rb'
     - 'bin/**/*'
