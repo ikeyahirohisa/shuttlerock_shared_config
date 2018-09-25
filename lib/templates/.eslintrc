@@ -30,6 +30,8 @@
     "jest": true,
     "Routes": true,
     "window": true,
+    "MIXPANEL_TOKEN": true,
+    "beforeAll": true
   },
   "rules": {
     "class-methods-use-this": 0,
