@@ -1,0 +1,22 @@
+{
+  "name": "shuttlerock_shared_config",
+  "version": "0.2.2",
+  "description": "Update shared config for Shuttlerock's projects.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "update_eslintrc": "./lib/tasks/update_eslintrc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shuttlerock/shuttlerock_shared_config.git"
+  },
+  "author": "ElseThen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shuttlerock/shuttlerock_shared_config/issues"
+  },
+  "homepage": "https://github.com/Shuttlerock/shuttlerock_shared_config#readme",
+  "dependencies": {}
+}

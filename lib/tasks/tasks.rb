@@ -13,7 +13,7 @@ namespace :shuttlerock_shared_config do
     FileUtils.copy(input_path, Dir.pwd)
   end
 
-  desc 'Update .eslint.yml'
+  desc 'Update .eslintrc'
   task :update_eslint do
     input_path = File.expand_path('../../lib/templates/.eslintrc', __dir__)
     FileUtils.copy(input_path, Dir.pwd)
