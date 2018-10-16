@@ -127,6 +127,8 @@
     "no-alert": 0,
     // Validate JSX has key prop when in array or iterator
     "react/jsx-key": 0,
+    // Ignoring the following rule 'cause Flow's not fully implemented yet
+    "react/forbid-prop-types": 0,
     "react/jsx-no-duplicate-props": [
       0,
       {
