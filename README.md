@@ -3,7 +3,7 @@
 Update shared config (.rubocop.yml, .codeclimate.yml, .eslintrc, .stylelintrc)
 for Shuttlerock's projects.
 
-## Installation
+## Installation in Ruby application
 
 Add this line to your application's Gemfile:
 
@@ -19,13 +19,52 @@ Or install it yourself as:
 
     $ gem install shuttlerock_shared_config
 
-## Usage
+## Usage in Ruby application
 
     $ rake shuttlerock_shared_config:update_codeclimate  # Update .codeclimate.yml
     $ rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
     $ rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
     $ rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
     $ rake shuttlerock_shared_config:update              # Update all
+
+## Installation in JS application
+    $ npm install shuttlerock_shared_config
+
+Add ' "update_eslintrc": "npx update_eslintrc" ' to yours package.json:
+
+```
+scripts: {
+...
+"update_eslintrc": "npx update_eslintrc"
+...
+}
+```
+## Usage in JS application
+
+    $ npm run-script update_eslintrc
+    or
+    $ yarn run update_eslintrc
+
+## How to Update a NPM Package
+
+When you make changes, you can update the package using:
+```
+$ npm version <update_type>
+```
+
+Where <update_type> is one of the semantic versioning release types, patch, minor, or major.
+This command will change the version number in package.json.
+Note: this will also add a tag with the updated release number to your git repository if you have linked one to your npm account.
+After updating the version number run:
+
+```
+$ npm publish
+```
+You can get more information [here](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+
+## How to Add npm-owner to NPM Package
+
+You can read about this [here](https://docs.npmjs.com/cli/owner).
 
 ## Development
 
