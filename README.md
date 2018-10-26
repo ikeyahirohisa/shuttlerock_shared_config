@@ -48,8 +48,8 @@ scripts: {
 ## How to publish 
 
 1. Update gem's version:
-  1.1 For RubyGems [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/lib/shuttlerock_shared_config/version.rb)
-  1.2 For NPM [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/package.json)
+1.1 For RubyGems [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/lib/shuttlerock_shared_config/version.rb)
+1.2 For NPM [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/package.json)
 2. Commit and push changes to Github
 2. Add tag with new version and push to Github
 ```
