@@ -46,7 +46,7 @@ jobs:
           path: /tmp/test-results
           destination: test-results
 
-  deploy:
+  deploy_rubygems:
     <<: *defaults
     steps:
       - checkout
@@ -60,6 +60,18 @@ jobs:
             gem build shuttlerock_shared_config.gemspec
             gem push "$(ls | grep shuttlerock_shared_config-)"
 
+  deploy_npm:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Setup NPM
+          command: bash .circleci/setup-npm.sh
+
+      - run:
+          name: Publish to NPM
+          command: npm publish
+
 workflows:
   version: 2
   build-n-deploy:
@@ -68,7 +80,15 @@ workflows:
           filters:  # required since `deploy` has tag filters AND requires `build`
             tags:
               only: /.*/
-      - deploy:
+      - deploy_rubygems:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+      - deploy_npm:
           requires:
             - build
           filters:
