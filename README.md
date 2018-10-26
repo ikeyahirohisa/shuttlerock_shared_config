@@ -45,22 +45,17 @@ scripts: {
     or
     $ yarn run update_eslintrc
 
-## How to Update a NPM Package
+## How to publish 
 
-When you make changes, you can update the package using:
-```
-$ npm version <update_type>
-```
+1. Update gem's version:
+  1.1 For RubyGems [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/lib/shuttlerock_shared_config/version.rb)
+  1.2 For NPM [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/package.json)
+2. Commit and push changes to Github
+2. Add tag with new version and push to Github
 
-Where <update_type> is one of the semantic versioning release types, patch, minor, or major.
-This command will change the version number in package.json.
-Note: this will also add a tag with the updated release number to your git repository if you have linked one to your npm account.
-After updating the version number run:
-
-```
-$ npm publish
-```
-You can get more information [here](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+    $ git tag -a vX.X.X -m "vX.X.X"
+    $ git push origin vX.X.X
+     
 
 ## How to Add npm-owner to NPM Package
 
