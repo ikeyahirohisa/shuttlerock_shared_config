@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/shuttlerock_shared_config
   docker:
-    - image: circleci/ruby:2.5.1
+    - image: circleci/ruby:2.5.1-node
 
 version: 2
 jobs:
@@ -70,7 +70,8 @@ jobs:
 
       - run:
           name: Publish to NPM
-          command: npm publish
+          command: |
+            npm publish
 
 workflows:
   version: 2

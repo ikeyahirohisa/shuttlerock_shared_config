@@ -1,6 +1,6 @@
 {
   "name": "shuttlerock_shared_config",
-  "version": "0.2.4",
+  "version": "0.2.9",
   "description": "Update shared config for Shuttlerock's projects.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
