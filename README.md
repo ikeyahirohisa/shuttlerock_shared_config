@@ -53,8 +53,8 @@ scripts: {
 2. Commit and push changes to Github
 2. Add tag with new version and push to Github
 ```
-    $ git tag -a vX.X.X -m "vX.X.X"
-    $ git push origin vX.X.X
+ $ git tag -a vX.X.X -m "vX.X.X"
+ $ git push origin vX.X.X
 ```  
 
 ## How to Add npm-owner to NPM Package
