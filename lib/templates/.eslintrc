@@ -88,7 +88,13 @@
         "argsIgnorePattern": "^__"
       }
     ],
-    "lines-between-class-members": 0,
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
     "react/destructuring-assignment": 0,
     "react/no-danger": 0,
     "react/no-array-index-key": 0,
