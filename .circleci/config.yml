@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/shuttlerock_shared_config
   docker:
-    - image: circleci/ruby:2.6.0-node
+    - image: circleci/ruby:2.6.1-node
 
 version: 2
 jobs:
