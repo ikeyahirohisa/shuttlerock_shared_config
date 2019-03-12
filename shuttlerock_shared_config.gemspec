@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files lib`.split(/\s+/)
   spec.bindir        = 'exe'
 
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 2.6.1'
 
   spec.add_dependency 'rake', '~> 12.3'
   spec.add_dependency 'rubocop', '~> 0.62'
