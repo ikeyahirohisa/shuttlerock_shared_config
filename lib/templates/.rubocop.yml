@@ -1,4 +1,6 @@
 # See example at https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+require: rubocop-performance
+
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
