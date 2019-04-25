@@ -7,7 +7,7 @@ engines:
     enabled: true
   rubocop:
     enabled: true
-    channel: rubocop-0-55
+    channel: rubocop-0.64
   #stylelint:
   #  enabled: true
   #csslint:
