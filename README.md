@@ -1,7 +1,8 @@
 # ShuttlerockSharedConfig
 
 Update shared config for Shuttlerock's projects:
- ``` .rubocop.yml
+ ```
+  .rubocop.yml
   .codeclimate.yml
   .eslintrc
   .stylelintrc
@@ -32,6 +33,7 @@ Or install it yourself as:
     $ rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
     $ rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
     $ rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
+    $ rake shuttlerock_shared_config:update_dangerfile   # Update Dangerfile and create doc/env_list.rb
     $ rake shuttlerock_shared_config:update              # Update all
 
 ## Installation in JS application
@@ -52,7 +54,7 @@ scripts: {
     or
     $ yarn run update_eslintrc
 
-## How to publish 
+## How to publish
 
 1. Update gem's version:
  - For RubyGems [here](https://github.com/Shuttlerock/shuttlerock_shared_config/blob/master/lib/shuttlerock_shared_config/version.rb)
@@ -67,6 +69,21 @@ scripts: {
 ## How to Add npm-owner to NPM Package
 
 You can read about this [here](https://docs.npmjs.com/cli/owner).
+
+## How to set up danger.gem
+Add to .circleci/config.yml:
+
+```danger:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-bundle-{{ checksum "Gemfile.lock" }}
+      - run: bundle --path vendor/bundle
+      - run: bundle exec danger
+```
+Add environment variables to doc/env_list.yml
 
 ## Development
 
