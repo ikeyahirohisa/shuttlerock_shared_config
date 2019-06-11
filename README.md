@@ -1,7 +1,14 @@
 # ShuttlerockSharedConfig
 
-Update shared config (.rubocop.yml, .codeclimate.yml, .eslintrc, .stylelintrc)
-for Shuttlerock's projects.
+Update shared config for Shuttlerock's projects:
+ ``` .rubocop.yml
+  .codeclimate.yml
+  .eslintrc
+  .stylelintrc
+   Dangerfile
+   env_list.yml
+   .env.example
+ ```
 
 ## Installation in Ruby application
 
