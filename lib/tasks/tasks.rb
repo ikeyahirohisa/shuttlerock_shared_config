@@ -43,6 +43,8 @@ namespace :shuttlerock_shared_config do
       "WARNING!!!\n" \
       "For danger.gem to work correctly, you need to add settings to:\n" \
       ".circleci/config.yml, doc/env_list.yml")
+    input_path = File.expand_path('../../lib/templates/.env.example', __dir__)
+    FileUtils.copy(input_path, Dir.pwd)
     input_path = File.expand_path('../../lib/templates/env_list.yml', __dir__)
     result_dir = Dir.pwd + '/doc'
     unless File.exist?(Dir.pwd + '/doc/env_list.yml')

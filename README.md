@@ -1,7 +1,7 @@
 # ShuttlerockSharedConfig
 
 Update shared config for Shuttlerock's projects:
- ```
+```
   .rubocop.yml
   .codeclimate.yml
   .eslintrc
@@ -9,8 +9,7 @@ Update shared config for Shuttlerock's projects:
    Dangerfile
    env_list.yml
    .env.example
- ```
-
+```
 ## Installation in Ruby application
 
 Add this line to your application's Gemfile:
@@ -33,7 +32,7 @@ Or install it yourself as:
     $ rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
     $ rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
     $ rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
-    $ rake shuttlerock_shared_config:update_dangerfile   # Update Dangerfile and create doc/env_list.rb
+    $ rake shuttlerock_shared_config:update_dangerfile   # Update Dangerfile and create doc/      env_list.yml
     $ rake shuttlerock_shared_config:update              # Update all
 
 ## Installation in JS application
