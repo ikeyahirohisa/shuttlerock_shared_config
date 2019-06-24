@@ -1,0 +1,23 @@
+# Warn when there is a big PR
+warn('Big PR') if git.lines_of_code > 500
+
+# Make sure that and new ENV files are recorded in /doc/env_list.yml
+documented_env = YAML.load_file('doc/env_list.yml').keys
+
+git.diff.each do |chunk|
+  chunk.patch.lines.grep(/^+/).each do |added_line|
+    env_variable = (added_line.match(/ENV\[(\S+)\]/) || added_line.match(/ENV.fetch\((\S+)\)/))&.captures&.first.to_s.delete("'").delete('"')
+
+    next if env_variable.nil? || env_variable.empty?
+
+    failure("Please add a record of #{env_variable} to doc/env_list.yml") unless documented_env.include?(env_variable)
+  end
+end
+
+if github.pr_body.include?('EXAMPLE_ENV_VARIABLE')
+  warn('Template `Deployment Notes` appears to be unmodified. Please update with relevant information or remove if not required.')
+end
+
+if github.pr_body.include?('Do this') && github.pr_body.include?('Do that')
+  warn('Template `How to test PR` appears to be unmodified. Please update with relevant information or remove if testing is not required.')
+end
