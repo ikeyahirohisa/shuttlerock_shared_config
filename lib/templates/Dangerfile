@@ -21,3 +21,7 @@ end
 if github.pr_body.include?('Do this') && github.pr_body.include?('Do that')
   warn('Template `How to test PR` appears to be unmodified. Please update with relevant information or remove if testing is not required.')
 end
+
+failure('Please add labels to this PR.') if github.pr_labels.empty?
+
+failure('Please assign this PR to its owner.') if github.pr_json['assignee'].nil? && !github.pr_labels.include?('dependencies')
