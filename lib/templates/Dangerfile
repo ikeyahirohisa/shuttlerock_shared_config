@@ -2,15 +2,15 @@
 warn('Big PR') if git.lines_of_code > 500
 
 # Make sure that and new ENV files are recorded in /doc/env_list.yml
-documented_env = YAML.load_file('doc/env_list.yml').keys
+documented_env = File.read('.env.example').split("\n").select { |line| line =~ /^[A-Z]/ }.map { |line| line.sub(/^([^=]+)=.*$/, '\1') }
 
 git.diff.each do |chunk|
   chunk.patch.lines.grep(/^+/).each do |added_line|
-    env_variable = (added_line.match(/ENV\[(\S+)\]/) || added_line.match(/ENV.fetch\((\S+)\)/))&.captures&.first.to_s.delete("'").delete('"')
+    env_variable = (added_line.match(/ENV\[(\S+)\]/) || added_line.match(/ENV.fetch\((\S+)\)/))&.captures&.first.to_s.gsub(/["']/, '')
 
     next if env_variable.nil? || env_variable.empty?
 
-    failure("Please add a record of #{env_variable} to doc/env_list.yml") unless documented_env.include?(env_variable)
+    failure("Please add a record of #{env_variable} to .env.example") unless documented_env.include?(env_variable)
   end
 end
 
