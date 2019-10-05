@@ -16,7 +16,7 @@ AllCops:
     - 'vendor/**/*'
 
 # Align the elements of a hash literal if they span more than one line.
-AlignHash:
+Layout/AlignHash:
   # Alignment of entries using hash rocket as separator. Valid values are:
   #
   # key - left alignment of keys
@@ -42,13 +42,13 @@ AlignHash:
   #   bb: 1
   EnforcedColonStyle: table
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
-EmptyLines:
+Layout/EmptyLines:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Max: 150
 
 Metrics/AbcSize:
@@ -74,10 +74,10 @@ Naming/UncommunicativeMethodParamName:
 Naming/UncommunicativeBlockParamName:
   MinNameLength: 2
 
-SpaceInsideParens:
+Layout/SpaceInsideParens:
   Enabled: false
 
-SpaceBeforeFirstArg:
+Layout/SpaceBeforeFirstArg:
   Enabled: false
 
 Style/AccessModifierDeclarations:
