@@ -1,5 +1,14 @@
 # Change log
 
+## 0.2.24 (2020-01-16)
+
+### Changed
+- Update .rubocop.yml.
+  Please run for update .rubocop.yml:
+  ```
+    rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
+  ```
+
 ## 0.2.23 (2019-10-05)
 
 ### Changed
