@@ -1,6 +1,6 @@
 # Change log
 
-## 0.2.25 (2019-01-16)
+## 0.2.26 (2019-01-16)
 
 ### Changed
 - Include a department for each problem cop in .rubocop.yml.
