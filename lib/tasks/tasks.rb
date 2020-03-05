@@ -4,7 +4,7 @@ require 'rake'
 require 'fileutils'
 
 namespace :shuttlerock_shared_config do
-  task update: %i[update_codeclimate update_eslint update_rubocop update_stylelintrc update_dangerfile] do
+  task update: %i[update_codeclimate update_eslint update_rubocop update_stylelintrc update_dangerfile update_pull_request_template] do
   end
 
   desc 'Update .codeclimate.yml'
@@ -52,5 +52,14 @@ namespace :shuttlerock_shared_config do
       FileUtils.copy(input_path, result_dir)
       warn('Created /doc/env_list.yml')
     end
+  end
+
+  desc 'Update pull_request_template.md'
+  task :update_pull_request_template do
+    input_path = File.expand_path('../../lib/templates/PULL_REQUEST_TEMPLATE.md', __dir__)
+    result_dir = Dir.pwd + '/.github'
+    FileUtils.mkdir_p(result_dir) unless File.directory?(result_dir)
+    FileUtils.copy(input_path, result_dir)
+    warn('Updated pull_request_template.md')
   end
 end
