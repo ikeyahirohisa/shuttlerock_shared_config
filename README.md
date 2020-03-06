@@ -9,6 +9,7 @@ Update shared config for Shuttlerock's projects:
    Dangerfile
    env_list.yml
    .env.example
+   PULL_REQUEST_TEMPLATE.md
 ```
 ## Installation in Ruby application
 
@@ -28,12 +29,13 @@ Or install it yourself as:
 
 ## Usage in Ruby application
 
-    $ rake shuttlerock_shared_config:update_codeclimate  # Update .codeclimate.yml
-    $ rake shuttlerock_shared_config:update_eslint       # Update .eslint.yml
-    $ rake shuttlerock_shared_config:update_rubocop      # Update .rubocop.yml
-    $ rake shuttlerock_shared_config:update_stylelintrc  # Update .stylelintrc
-    $ rake shuttlerock_shared_config:update_dangerfile   # Update Dangerfile and create doc/      env_list.yml
-    $ rake shuttlerock_shared_config:update              # Update all
+    $ rake shuttlerock_shared_config:update_pull_request_template  # Update PULL_REQUEST_TEMPLATE.md
+    $ rake shuttlerock_shared_config:update_codeclimate            # Update .codeclimate.yml
+    $ rake shuttlerock_shared_config:update_eslint                 # Update .eslint.yml
+    $ rake shuttlerock_shared_config:update_rubocop                # Update .rubocop.yml
+    $ rake shuttlerock_shared_config:update_stylelintrc            # Update .stylelintrc
+    $ rake shuttlerock_shared_config:update_dangerfile             # Update Dangerfile and create      doc/env_list.yml
+    $ rake shuttlerock_shared_config:update                        # Update all
 
 ## Installation in JS application
     $ npm install shuttlerock_shared_config
