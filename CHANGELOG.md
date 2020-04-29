@@ -1,5 +1,12 @@
 # Change log
 
+## 0.2.28 (2020-04-29)
+
+### Changed
+
+- Updated ruby to 2.6.6
+
+
 ## 0.2.27 (2020-03-06)
 
 ### Changed
