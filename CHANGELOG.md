@@ -1,5 +1,17 @@
 # Change log
 
+## 0.2.29 (2020-05-05)
+
+### Changed
+
+- Added new cops to rubocop.yml:
+    Lint/RaiseException (0.81)
+    Lint/StructNewOverride (0.81)
+    Style/HashEachMethods (0.80)
+    Style/HashTransformKeys (0.80)
+    Style/HashTransformValues (0.80)
+
+
 ## 0.2.28 (2020-04-29)
 
 ### Changed
